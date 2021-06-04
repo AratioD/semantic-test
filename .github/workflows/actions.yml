@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Simple JS Action
-        uses: actions/https://github.com/actions/hello-world-javascript-action@v1.1
+        uses: actions/actions/hello-world-javascript-action@v1.1
         with:
           who-to-great: John
       - name: Log Greeting Time
