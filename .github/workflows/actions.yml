@@ -6,10 +6,16 @@ jobs:
   run-github-actions:
     runs-on: ubuntu-latest
     steps:
-      - name: List Files
+      - name: List Files Before
         run: |
           pwd
-          ls
+          ls -a
+      - name: Checkout
+        uses: /actions/checkout@v2
+      - name: List Files After
+          run: |
+            pwd
+            ls -a
       - name: Github Workspace
         run: echo $GITHUB_WORKSPACE
       - name: Simple JS Action
