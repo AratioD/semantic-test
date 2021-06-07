@@ -13,9 +13,9 @@ jobs:
       - name: Checkout
         uses: /actions/checkout@v2
       - name: List Files After
-          run: |
+        run: |
             pwd
-            ls -a
+          ls -a
       - name: Github Workspace
         run: echo $GITHUB_WORKSPACE
       - name: Simple JS Action
