@@ -11,7 +11,7 @@ jobs:
           pwd
           ls
       - name: Github Workspace
-        run: echo "${{GITHUB_WORKSPACE}}"
+        run: echo $GITHUB_WORKSPACE
       - name: Simple JS Action
         uses: actions/hello-world-javascript-action@v1.1
         with:
