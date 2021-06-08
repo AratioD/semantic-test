@@ -14,3 +14,5 @@ jobs:
         run: |
           pwd
           ls -a
+      - name: Create A Semantic Release
+        run: npx semantic-release
