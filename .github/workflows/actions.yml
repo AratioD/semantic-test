@@ -1,7 +1,18 @@
 name: Actions Workflow
 
-on: [push, pull_request]
-
+on:
+  push:
+    branches:
+      - main
+      - 'feature/*' # matches feature/featA, feature/featB,
+      # don't match feature/feat/something...
+      - 'feature/**' #this will match all kind of variants which coming after 'feature/kissa/koira'
+      - '!feature/featC' # ignore every branch which starts featur/featC
+    tags:
+      - v1.*
+    paths:
+      - '**.js'
+      -
 jobs:
   run-github-actions:
     runs-on: ubuntu-latest
@@ -14,8 +25,8 @@ jobs:
           echo $GITHUB_REPOSITORY
           echo $GITHUB_WORKSPACE
           echo "${{github.token}}"
-#          git clone git@github.com:$GITHUB_REPOSITORY
-#          git checkout $GITHUB_SHA
+      #          git clone git@github.com:$GITHUB_REPOSITORY
+      #          git checkout $GITHUB_SHA
       - name: Checkout
         uses: /actions/checkout@v2
       - name: List Files After
