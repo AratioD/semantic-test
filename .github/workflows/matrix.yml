@@ -14,10 +14,8 @@ jobs:
         exclude:
           - os: ubuntu-latest
             node_version: 6
-            is_ubuntu_8: "kissa_6"
           - os: macos-latest
             node_version: 8
-            is_ubuntu_8: "kissa_mac_os_8"
     runs-on: ${{matrix.os}}
     env:
       IS_UBUNTU_8: ${{matrix.is_ubuntu_8}}
